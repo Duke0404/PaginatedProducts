@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { Routes, Route } from "react-router-dom"
 import Search from "./components/search"
 import ProductTable from "./components/productTable"
 import PageControls from "./components/pageControls"
@@ -88,18 +87,12 @@ export default function App() {
 					filterApplied={filteredProduct !== undefined}
 				/>
 			</nav>
-			<Routes>
-				<Route
-					index
-					element={
-						<ProductTable
-							productList={productList}
-							filteredProduct={filteredProduct}
-							fetchError={fetchError}
-						/>
-					}
-				/>
-			</Routes>
+
+			<ProductTable
+				productList={productList}
+				filteredProduct={filteredProduct}
+				fetchError={fetchError}
+			/>
 
 			<PageControls
 				page={page}
